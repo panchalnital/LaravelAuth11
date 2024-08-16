@@ -74,6 +74,30 @@
                                         </a>
                                     @endif
                                 @endauth
+                                @auth('doctor')
+                                    <a
+                                        href="{{ url('/doctor/dashboard') }}"
+                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                                    >
+                                        Doctor Dashboard
+                                    </a>
+                                @else
+                                    <a
+                                        href="{{ route('doctor.login') }}"
+                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                                    >
+                                        Doctor Login
+                                    </a>
+
+                                    @if (Route::has('doctor.register'))
+                                        <a
+                                            href="{{ route('doctor.register') }}"
+                                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                                        >
+                                            Doctor Register
+                                        </a>
+                                    @endif
+                                @endauth
                             </nav>
                         @endif
                     </header>
